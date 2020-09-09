@@ -13,8 +13,9 @@ private static String url;
 
         
       //  Class.forName("org.postgresql.Driver");     С версии JDBC 4.0   эта строчка не обязательна.
-        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NorthWind",
-                "postgres","456456");
+
+       try(Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NorthWind",
+                "postgres","456456")){;  // Try with Resources
 
         String justForCheck;
 
@@ -24,7 +25,7 @@ private static String url;
             System.out.println(resultSet.getString("customer_id"));
 
 
-        }
+        }}
     }
 }
 
