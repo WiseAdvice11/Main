@@ -16,6 +16,8 @@ private static String url;
         Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NorthWind",
                 "postgres","456456");
 
+        String justForCheck;
+
         Statement stmn = con.createStatement();
         ResultSet resultSet = stmn.executeQuery("SELECT * FROM customers");
         while (resultSet.next()){
